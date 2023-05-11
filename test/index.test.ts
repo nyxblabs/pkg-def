@@ -88,7 +88,7 @@ describe('package.json', () => {
    })
 
    it('correctly reads a version from package', async () => {
-      expect(await readPackageJSON('pathe').then(p => p?.version)).to.be.a(
+      expect(await readPackageJSON('nyxpath').then(p => p?.version)).to.be.a(
          'string',
       )
    })
