@@ -1,0 +1,54 @@
+{
+  "name": "pkg-def",
+  "version": "0.0.4",
+  "description": "🔧 Enhance your Node.js development experience with powerful utilities and TypeScript definitions for managing your `package.json` and `tsconfig.json files`.",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "license": "MIT",
+  "hompage": "https://💻nyxb.ws",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyxblabs/CodeBoost.git",
+    "directory": "packages/pkg-def"
+  },
+  "bugs": {
+    "url": "https://github.com/nyxblabs/CodeBoost/issues"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "scripts": {
+    "prepack": "nyxr build",
+    "build": "unbuild",
+    "dev": "vitest",
+    "release": "pnpm publish",
+    "lint": "eslint --ext .ts,.js,.mjs,.cjs .",
+    "lint:fix": "eslint --fix --ext .ts,.js,.mjs,.cjs .",
+    "test": "vitest run --coverage",
+    "test:types": "tsc --noEmit --module esnext --skipLibCheck --moduleResolution node ./test/*.test.ts",
+    "changelog": "nyxlx changelogen --output"
+  },
+  "dependencies": {
+    "esmnxuts": "^0.0.7",
+    "nyxpath": "^0.0.3",
+    "jsonc-parser": "^3.2.0"
+  },
+  "devDependencies": {
+    "@nyxb/eslint-config": "^0.0.53",
+    "@types/node": "^18.16.3",
+    "@vitest/coverage-c8": "^0.30.1",
+    "eslint": "^8.40.0",
+    "expect-type": "^0.15.0",
+    "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.30.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": []
+}
